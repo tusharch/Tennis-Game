@@ -1,0 +1,86 @@
+#!/bin/bash
+curl http://localhost:3000/ -o test0.txt
+
+if diff test0.txt test0check.txt > /dev/null
+then
+    echo "Test Get Passed"
+else
+    echo "Test Get Failed"
+fi
+
+curl -d "sets=1&P1Score=0&P1Games=0&P1Sets=0&P2Score=0&P2Games=0&P2Sets=0&P1=Player1 Scored" -X POST http://localhost:3000/ -o test1.txt
+
+if diff test1.txt test1check.txt > /dev/null
+then
+    echo "Test Player 1 Scores Passed"
+else
+    echo "Test Player 1 Scores Failed"
+fi
+
+curl -d "sets=1&P1Score=0&P1Games=0&P1Sets=0&P2Score=0&P2Games=0&P2Sets=0&P2=Player2 Scored" -X POST http://localhost:3000/ -o test2.txt    
+
+if diff test2.txt test2check.txt > /dev/null
+then
+    echo "Test Player 2 Scores Passed"
+else
+    echo "Test Player 2 Scores Failed"
+fi
+
+curl -d "sets=1&P1Score=30&P1Games=0&P1Sets=0&P2Score=40&P2Games=0&P2Sets=0&P1=Player1 Scored" -X POST http://localhost:3000/ -o test3.txt
+
+
+if diff test3.txt test3check.txt > /dev/null
+then
+    echo "Test Deuce Passed"
+else
+    echo "Test Deuce Failed"
+fi
+
+curl -d "sets=1&P1Score=Deuce&P1Games=0&P1Sets=0&P2Score=Deuce&P2Games=0&P2Sets=0&P1=Player1 Scored" -X POST http://localhost:3000/ -o test4.txt
+
+
+if diff test4.txt test4check.txt > /dev/null
+then
+    echo "Test Advantage Passed"
+else
+    echo "Test Advantage Failed"
+fi
+
+curl -d "sets=1&P1Score=Advantage&P1Games=0&P1Sets=0&P2Score=Deuce&P2Games=0&P2Sets=0&P1=Player1 Scored" -X POST http://localhost:3000/ -o test5.txt
+
+if diff test5.txt test5check.txt > /dev/null
+then
+    echo "Test Advantage Win Passed"
+else
+    echo "Test Advantage Win Failed"
+fi
+
+
+curl -d "sets=1&P1Score=40&P1Games=0&P1Sets=0&P2Score=0&P2Games=0&P2Sets=0&P1=Player1 Scored" -X POST http://localhost:3000/ -o test6.txt
+
+if diff test6.txt test6check.txt > /dev/null
+then
+    echo "Test Regular Win Passed"
+else
+    echo "Test Regular Win Failed"
+fi
+
+curl -d "sets=1&P1Score=40&P1Games=5&P1Sets=0&P2Score=0&P2Games=0&P2Sets=0&P1=Player1 Scored" -X POST http://localhost:3000/ -o test7.txt
+
+if diff test7.txt test7check.txt > /dev/null
+then
+    echo "Test Set Win Passed"
+else
+    echo "Test Set Win Failed"
+fi
+
+curl -d "sets=2&P1Score=40&P1Games=5&P1Sets=1&P2Score=0&P2Games=0&P2Sets=0&P1=Player1 Scored" -X POST http://localhost:3000/ -o test8.txt
+
+if diff test8.txt test8check.txt > /dev/null
+then
+    echo "Test Match Win Passed"
+else
+    echo "Test Match Win Failed"
+fi
+
+

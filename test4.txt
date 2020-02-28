@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tennis</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Tennis</h1>
+    <br>
+    
+      Set: 1
+      
+    <br>
+    <br>
+    <br>
+
+    <div>Player 1</div><div>Sets: 0 <br> Games: 0
+      <br>Score: Advantage</div>
+      <br><div>Player 2</div><div>Sets: 0 <br> Games: 0
+        <br>Score: Deuce</div>
+    
+    <form action = "/" method = "post">
+      <input type="hidden"  name="sets" value= 1>
+      <input type="hidden"  name="P1Score" value= Advantage>
+      <input type="hidden"  name="P1Games" value= 0>
+      <input type="hidden"  name="P1Sets" value= 0>
+      <input type="hidden"  name="P2Score" value= Deuce>
+      <input type="hidden"  name="P2Games" value= 0>
+      <input type="hidden"  name="P2Sets" value= 0>
+      <input type="submit" class = "P1" name="P1" value="Player1 Scored">
+    </form>
+    <br>
+      <form action = "/" method = "post">
+      <input type="hidden"  name="sets" value= 1>
+      <input type="hidden"  name="P1Score" value= Advantage>
+      <input type="hidden"  name="P1Games" value= 0>
+      <input type="hidden"  name="P1Sets" value= 0>
+      <input type="hidden"  name="P2Score" value= Deuce>
+      <input type="hidden"  name="P2Games" value= 0>
+      <input type="hidden"  name="P2Sets" value= 0>
+      <input type="submit" class = "P2" name="P2" value="Player2 Scored">
+      </form>
+      
+      
+      
+
+      <br>
+      <form action = "/" method = "post">
+        <input type="submit" name="Reset" class = "reset" value="Reset Game">
+        </form>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tennis</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Tennis</h1>
+    <br>
+    <%if (player1Sets != 2 && player2Sets != 2) { %>
+      Set: <%= sets %>
+      <% }%>
+    <br>
+    <br>
+    <br>
+
+    <div>Player 1</div><div>Sets: <%= player1Sets %> <br> Games: <%= player1Games %>
+      <br>Score: <%= player1Score %></div>
+      <br><div>Player 2</div><div>Sets: <%= player2Sets %> <br> Games: <%= player2Games %>
+        <br>Score: <%= player2Score %></div>
+    <%if (player1Sets != 2 && player2Sets != 2) { %>
+    <form action = "/" method = "post">
+      <input type="hidden"  name="sets" value= <%= sets %>>
+      <input type="hidden"  name="P1Score" value= <%= player1Score %>>
+      <input type="hidden"  name="P1Games" value= <%= player1Games %>>
+      <input type="hidden"  name="P1Sets" value= <%= player1Sets %>>
+      <input type="hidden"  name="P2Score" value= <%= player2Score %>>
+      <input type="hidden"  name="P2Games" value= <%= player2Games %>>
+      <input type="hidden"  name="P2Sets" value= <%= player2Sets %>>
+      <input type="submit" class = "P1" name="P1" value="Player1 Scored">
+    </form>
+    <br>
+      <form action = "/" method = "post">
+      <input type="hidden"  name="sets" value= <%= sets %>>
+      <input type="hidden"  name="P1Score" value= <%= player1Score %>>
+      <input type="hidden"  name="P1Games" value= <%= player1Games %>>
+      <input type="hidden"  name="P1Sets" value= <%= player1Sets %>>
+      <input type="hidden"  name="P2Score" value= <%= player2Score %>>
+      <input type="hidden"  name="P2Games" value= <%= player2Games %>>
+      <input type="hidden"  name="P2Sets" value= <%= player2Sets %>>
+      <input type="submit" class = "P2" name="P2" value="Player2 Scored">
+      </form>
+      <% }%>
+      
+      <%if (player1Sets == 2) { %>
+        Player 1 Won!
+        <% }
+        else if (player2Sets === 2) { %>
+          Player 2 Won!
+      <% }%>
+
+      <br>
+      <form action = "/" method = "post">
+        <input type="submit" name="Reset" class = "reset" value="Reset Game">
+        </form>
+  </body>
+</html>

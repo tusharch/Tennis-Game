@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tennis</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Tennis</h1>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+
+    <div>Player 1</div><div>Sets: 2 <br> Games: 0
+      <br>Score: 0</div>
+      <br><div>Player 2</div><div>Sets: 0 <br> Games: 0
+        <br>Score: 0</div>
+    
+      
+      
+        Player 1 Won!
+        
+
+      <br>
+      <form action = "/" method = "post">
+        <input type="submit" name="Reset" class = "reset" value="Reset Game">
+        </form>
+  </body>
+</html>
